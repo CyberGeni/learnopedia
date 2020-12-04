@@ -8,9 +8,6 @@
     <!-- Bootstrap -->
 	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
   <script type="text/javascript">
-function MM_popupMsg(msg) { //v1.0
-  alert(msg);
-}
 function MM_validateForm() { //v4.0
   if (document.getElementById){
     var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
@@ -27,18 +24,42 @@ function MM_validateForm() { //v4.0
     } if (errors) alert('The following error(s) occurred:\n'+errors);
     document.MM_returnValue = (errors == '');
 } }
+	 function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
   </script>
   </head>
   <body>
-  	<form action="../phpMyAdmin-5.0.4-all-languages.zip" method="get" class="col-lg-11" onSubmit="MM_popupMsg('login successful!');MM_validateForm('exampleInputPassword1','','R');return document.MM_returnValue">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" > <a class="navbar-brand" href="#">LEARNOPEDIA&nbsp;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="home.html"><span class="sr-only">HOME&nbsp;</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="learn.html">LEARN&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="services.html">SERVICES&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="tutor.html">TUTORS&nbsp;</a> </li>
+		<li class="nav-item"> <a class="nav-link" href="contact.html">CONTACT&nbsp;</a> </li>
+		<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ACCOUNT&nbsp; </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="register.html">Register</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html">Login</a> </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+ </nav>
+  	<form action="" method="post" class="col-lg-11" onSubmit="MM_popupMsg('login successful!');MM_validateForm('exampleInputPassword1','','R');MM_goToURL('parent','home.html');return document.MM_returnValue">
   	  <div class="form-group">
-  	    <label for="exampleInputEmail1">Login<br>
+  	    <label for="exampleInputEmail1" onFocus="MM_validateForm('exampleInputPassword1','','R');return document.MM_returnValue">Login<br>
         Email address</label>
   	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  	    <label for="number">Number:</label>
-        <input type="number" name="number" id="number">
-<label for="tel">Tel:</label>
-        <input type="tel" name="tel" id="tel">
   	    <small id="emailHelp1" class="form-text text-muted">We'll never share your email with anyone else.</small> </div>
   	  <div class="form-group">
   	    <label for="exampleInputPassword1">Password</label>
