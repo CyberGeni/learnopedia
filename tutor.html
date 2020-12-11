@@ -7,6 +7,7 @@
 <title>Tutor | Learnopedia</title>
 <link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https:/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -20,16 +21,27 @@
     <div class="primary_header">
       <h1 class="title"> LEARNOPEDIA</h1>
     </div>
-    <nav class="secondary_header" id="menu">
-      <ul>
-        <li><a href="home.html" class="nav">HOME</a></li>
-        <li><a href="learn.html" class="nav">LEARN</a></li>
-        <li><a href="services.html" class="nav">SERVICES</a></li>
-        <li><a href="tutor.html" class="nav">TUTORS</a></li>
-        <li><a href="contact.html" class="nav">CONTACT</a></li>
-		<li><a href="login.html" class="nav">LOGIN</a></li>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" > <a class="navbar-brand" href="index.html">LEARNOPEDIA&nbsp;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="index.html"><span class="sr-only">HOME&nbsp;</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="learn.html">LEARN&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="services.html">SERVICES&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="tutor.html">TUTORS&nbsp;</a> </li>
+		<li class="nav-item"> <a class="nav-link" href="contact.html">CONTACT&nbsp;</a> </li>
+		<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ACCOUNT&nbsp; </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="register.html">Register</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html">Login</a> </div>
+        </li>
       </ul>
-    </nav>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+ </nav>
   </header>
   <section>
     <h2 class="noDisplay">Main Content</h2>

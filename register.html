@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register | Learnopedia</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+  </script>
+  </head>
+  <body>
+  	<!-- body code goes here -->
+	  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" > <a class="navbar-brand" href="index.html">LEARNOPEDIA&nbsp;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="index.html"><span class="sr-only">HOME&nbsp;</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="learn.html">LEARN&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="services.html">SERVICES&nbsp;</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="tutor.html">TUTORS&nbsp;</a> </li>
+		<li class="nav-item"> <a class="nav-link" href="contact.html">CONTACT&nbsp;</a> </li>
+		<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ACCOUNT&nbsp; </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="register.html">Register</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="login.html">Login</a> </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+ </nav>
+  
+  <!-- 
+  Replace form-handler.php with URL where to send the form-data when the form is submitted
+  Goto http://w3c.github.io/html-reference/input.text.html#input.text for more information on all attributes that can be used with text input field
+--><h1>reg.</h1>
+<form method="post" onSubmit="MM_validateForm('name','','R','exampleInputPassword1','','R');return document.MM_returnValue" netlify>
+  <div>
+    <h4>Name</h4>
+    <label for="name">Name: <span class="required">*</span> </label>
+    <input type="text" id="name" name="name" value="" placeholder="Your name" required="required" autofocus />
+  </div>
+  
+ <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required="required">
+  </div>
+  
+  <div>
+    <h4>Gender</h4>
+    <label for="checkbox1">Male</label>
+    <input type="checkbox" name="checkbox1" id="checkbox1">
+    <label for="checkbox2">Female</label>
+    <input type="checkbox" name="checkbox2" id="checkbox2">
+  </div>
+  
+
+  <button value="Submit" type="submit" class="btn btn-primary" id="submit" onClick="MM_validateForm('name','','R','exampleInputPassword1','','R');MM_popupMsg('Registration Successful!');return document.MM_returnValue">Submit</button>
+</form>
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+  <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
